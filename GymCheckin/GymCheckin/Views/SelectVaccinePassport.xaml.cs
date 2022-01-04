@@ -1,7 +1,5 @@
 ﻿using GymCheckin.Dummy;
-using GymCheckin.Models;
 using Plugin.Media;
-using QRCodeDecoderLibrary;
 using Stormlion.ImageCropper;
 using System;
 using System.Collections.Generic;

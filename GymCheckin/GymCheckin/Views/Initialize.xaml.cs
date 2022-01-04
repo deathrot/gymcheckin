@@ -1,7 +1,5 @@
 ﻿using GymCheckin.Dummy;
-using GymCheckin.Models;
 using Plugin.Media;
-using QRCodeDecoderLibrary;
 using Stormlion.ImageCropper;
 using System;
 using System.Collections.Generic;
@@ -20,15 +18,9 @@ namespace GymCheckin.Views
     public partial class Initialize : ContentPage
     {
 
-        private InitializeModel model = null;
-
         public Initialize()
         {
-            this.model = new InitializeModel();
-
             InitializeComponent();
-            
-            this.BindingContext = model;
         }
                 
         async private void btnLetsGetStarted_Clicked(object sender, EventArgs e)

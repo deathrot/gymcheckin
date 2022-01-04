@@ -9,7 +9,6 @@
     <PackageReference Include="ImageCropper.Forms.Fix.v2" Version="1.1.5" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
     <PackageReference Include="PdfPig" Version="0.1.5" />
-    <PackageReference Include="QRCodeDecoder" Version="0.1.0" />
     <PackageReference Include="ShapeControl.Forms" Version="0.2.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.4" />
     <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta13" />
