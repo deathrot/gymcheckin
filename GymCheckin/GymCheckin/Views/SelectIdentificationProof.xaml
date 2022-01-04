@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Gym Checkin"
+             xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
+             x:Class="GymCheckin.Views.SelectIdentificationProof">
+    <ContentPage.Content>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
+                    <Label FontSize="Title" Padding="5" HorizontalTextAlignment="Center">
+                        Select an acceptable form of ID:
+                    </Label>
+                    <Label Padding="10,0,0,0" TextType="Html">
+                        - Birth certificate &lt;br /&gt;
+                    - Citizenship card &lt;br /&gt;
+                    - Driver's licence &lt;br /&gt;
+                    - Government (Ontario or other) issued identification card, including health card &lt;br /&gt;
+                    - Indian Status Card or Indigenous membership card &lt;br /&gt;
+                    - Passport &lt;br /&gt;
+                    - Permanent resident card &lt;br /&gt;
+                    - Documentation from an institution or public organization that includes the name of the holder and date of birth &lt;br /&gt;
+                    </Label>
+                    <Button Text="Select ID" x:Name="btnSelectIdentificationProof" HorizontalOptions="Center"
+                        Clicked="btnSelectIdentificationProof_Clicked"></Button>
+                </StackLayout>
+
+            <ScrollView Grid.Row="1">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Image x:Name="imgIdentificationProof" Aspect="AspectFit" WidthRequest="400" HeightRequest="400"
+                       HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand" ></Image>
+            </StackLayout>
+            </ScrollView>
+            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" Padding="10" VerticalOptions="End">
+                    <Button Text="Finish" x:Name="btnNext" IsVisible="false" Clicked="btnNext_Click"></Button>
+                </StackLayout>
+
+            </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

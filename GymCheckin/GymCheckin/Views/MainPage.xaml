@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GymCheckin.Views.MainPage"             
+             xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
+             Title="Gym Checkin"
+             x:Name="BrowseItemsPage">
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label HorizontalOptions="StartAndExpand" FontSize="Title" >Gym Checkin</Label>
+            <Button Text="Clear" HorizontalOptions="End" WidthRequest="70" HeightRequest="35" Padding="10" Clicked="Button_Clicked" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout Padding="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*" />
+            </Grid.RowDefinitions>
+            <pinch:PinchZoom BackgroundColor="White" Grid.Row="0">
+                <pinch:PinchZoom.Content>
+                    <Image x:Name="imgResource" Aspect="AspectFill"
+                       HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand"></Image>
+                </pinch:PinchZoom.Content>
+            </pinch:PinchZoom>
+        </Grid>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Gym Checkin"
+             x:Class="GymCheckin.Views.Initialize">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="Start">
+                    <Label FontSize="Large" TextType="Html">
+                        The app allows you to have the vaccine passport and the accepted personal identification on your device allowing you and businesses to speed up the check in process. The app can be safely be used in offline or airplane mode as your
+                        &lt;strong&gt;&lt;i&gt;data never leaves your device&lt;i&gt;&lt;/strong&gt;&lt;/div&gt;
+                    </Label>
+                </StackLayout>
+                <StackLayout Padding="10" VerticalOptions="CenterAndExpand">
+                    <Label Padding="0,10,0,0">
+                        You need the following to get started:
+                    </Label>
+                    <Label>
+                        Vaccine Passport as downloaded from the health ontario portal
+                    </Label>
+                    <Label>
+                        An acceptable form of ID:
+                    </Label>
+                    <Label Padding="10,0,0,0" TextType="Html">
+                        - Birth certificate &lt;br /&gt;
+- Citizenship card &lt;br /&gt;
+- Driver's licence &lt;br /&gt;
+- Government (Ontario or other) issued identification card, including health card &lt;br /&gt;
+- Indian Status Card or Indigenous membership card &lt;br /&gt;
+- Passport &lt;br /&gt;
+- Permanent resident card &lt;br /&gt;
+- Documentation from an institution or public organization that includes the name of the holder and date of birth &lt;br /&gt;
+                    </Label>
+
+                </StackLayout>
+                <StackLayout VerticalOptions="End" Orientation="Horizontal">
+                    <Button Text="Let's Get Started" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"
+                                x:Name="btnLetsGetStarted" Clicked="btnLetsGetStarted_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Gym Checkin"
+             xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
+             x:Class="GymCheckin.Views.SelectVaccinePassport">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                <Label FontSize="Title" Padding="5" HorizontalTextAlignment="Center">
+                    Currently only ontario vaccine passport are supported. Please upload the original pdf file that was downloaded from the ontario portal...
+                </Label>
+                <Button Text="Select Vaccine Certificate" x:Name="btnSelectVaccineCertificate" HorizontalOptions="Center" Clicked="btnSelectVaccineCertificate_Clicked"></Button>
+            </StackLayout>
+            <pinch:PinchZoom Grid.Row="1">
+                <pinch:PinchZoom.Content>
+                    <Image x:Name="imgBarCode"></Image>
+                </pinch:PinchZoom.Content>
+            </pinch:PinchZoom>
+            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" Padding="10" VerticalOptions="Center">
+                <Button Text="Next" x:Name="btnNext" IsVisible="false" Clicked="btnNext_Click"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
