@@ -25,5 +25,5 @@ This is a simple mobile application that allows ontario residents to consolidate
 
 
  ## Contribution
-In order to support different provinces and countries I am looking at samples of various countries that I can test with. If you want your countries to be supported please share those images via google drive or dropbox and send me a link on my email: sharma.deepak83@gmail.com
+In order to support different provinces and countries I am looking at samples of various countries that I can test with. If you want your countries to be supported please share those images via google drive or dropbox and send me a link on my email: paperdropio@gmail.com
 
