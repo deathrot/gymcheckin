@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymCheckin.Android", "GymCh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymCheckin.iOS", "GymCheckin\GymCheckin.iOS\GymCheckin.iOS.csproj", "{5587B64B-07FC-4B67-9309-158A3CB8EB6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymCheckin", "GymCheckin\GymCheckin\GymCheckin.csproj", "{DE7DD06C-0873-449D-8C50-2167968D8ADF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymCheckin", "GymCheckin\GymCheckin\GymCheckin.csproj", "{DE7DD06C-0873-449D-8C50-2167968D8ADF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymCheckinTests", "GymCheckinTests\GymCheckinTests.csproj", "{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,18 @@ Global
 		{DE7DD06C-0873-449D-8C50-2167968D8ADF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{DE7DD06C-0873-449D-8C50-2167968D8ADF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{DE7DD06C-0873-449D-8C50-2167968D8ADF}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Release|iPhone.Build.0 = Release|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1DAC33EA-B65B-441F-A6B7-82EEB40590D4}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

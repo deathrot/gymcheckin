@@ -1,33 +1,28 @@
-﻿using GymCheckin.Dummy;
-using Plugin.Media;
-using Stormlion.ImageCropper;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UglyToad.PdfPig;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace GymCheckin.Views
 {
     public partial class SelectVaccinePassport : ContentPage
     {
+
+        private ViewModels.ActivityViewModel model = new ViewModels.ActivityViewModel();
+
         public SelectVaccinePassport()
         {
             InitializeComponent();
+            this.BindingContext = model;
         }
-
 
         async private void btnSelectVaccineCertificate_Clicked(object sender, EventArgs e)
         {
             bool success = false;
             try
             {
+                model.IsBusy = true;
                 PickOptions options = new PickOptions()
                 {
                     FileTypes = FilePickerFileType.Pdf,
@@ -61,18 +56,23 @@ namespace GymCheckin.Views
                                     return;
 
                                 success = true;
-                                btnNext.IsVisible = true;
+                                model.CanProceedNext = true;
+                                model.IsBusy = false;
 
-                                qrCodeBytes = Utility.FileUtility.ResizeVC(qrCodeBytes, 1.5M);
+                                qrCodeBytes = Utility.ImageUtility.ResizeImage(qrCodeBytes, 1.5M);
+
+                                string vcImage = $"vc_{DateTime.Now.Ticks}.png";
 
                                 int totalWidth;
                                 int totalHeight;
-                                Utility.FileUtility.CombileImageFiles(headerBytes, qrCodeBytes, "vc.png", out totalWidth, out totalHeight);
+                                Utility.ImageUtility.CombileImageFiles(headerBytes, qrCodeBytes, vcImage, out totalWidth, out totalHeight);
 
                                 this.imgBarCode.WidthRequest = totalWidth;
                                 this.imgBarCode.HeightRequest = totalHeight;
                                 
-                                this.imgBarCode.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath("vc.png"));
+                                this.imgBarCode.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath(vcImage));
+
+                                Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, vcImage);
                             }
                         }
                     }
@@ -82,6 +82,11 @@ namespace GymCheckin.Views
             {
                 System.Diagnostics.Debug.WriteLine($"CapturePhotoAsync THREW: {ex.ToString()}");
             }
+            finally
+            {
+                model.IsBusy = false;
+            }
+            
 
             if (!success)
             {

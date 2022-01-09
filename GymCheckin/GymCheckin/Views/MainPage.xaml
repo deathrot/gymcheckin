@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymCheckin.Views.MainPage"             
              xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
-             Title="Gym Checkin"
-             x:Name="BrowseItemsPage">
+             Title="Gym Checkin">
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
@@ -12,23 +11,81 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label HorizontalOptions="StartAndExpand" FontSize="Title" >Gym Checkin</Label>
-            <Button Text="Clear" HorizontalOptions="End" WidthRequest="70" HeightRequest="35" Padding="10" Clicked="Button_Clicked" />
+            <Label HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Title" >Gym Checkin</Label>
+            <ImageButton x:Name="imgReset" BackgroundColor="Transparent" HorizontalOptions="End" WidthRequest="30" VerticalOptions="Center" HeightRequest="30"  Clicked="imgReset_Clicked" />
         </StackLayout>
     </NavigationPage.TitleView>
 
     <StackLayout Padding="10">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="9*" />
-            </Grid.RowDefinitions>
-            <pinch:PinchZoom BackgroundColor="White" Grid.Row="0">
-                <pinch:PinchZoom.Content>
-                    <Image x:Name="imgResource" Aspect="AspectFill"
+        <StackLayout Padding="10" IsVisible="{Binding IsPotrait}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="4*" />
+                </Grid.RowDefinitions>
+                <pinch:PinchZoom BackgroundColor="White" Grid.Row="0">
+                    <pinch:PinchZoom.Content>
+                        <Image x:Name="imgResourceVC" Aspect="AspectFit"
                        HorizontalOptions="CenterAndExpand" 
-                       VerticalOptions="CenterAndExpand"></Image>
-                </pinch:PinchZoom.Content>
-            </pinch:PinchZoom>
-        </Grid>
+                       VerticalOptions="CenterAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="2"
+                                                      Tapped="imgResourceVC_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </pinch:PinchZoom.Content>
+                </pinch:PinchZoom>
+                <pinch:PinchZoom BackgroundColor="White" Grid.Row="2">
+                    <pinch:PinchZoom.Content>
+                        <Image x:Name="imgResourceId" Aspect="AspectFill"
+                       HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="2"
+                                                      Tapped="imgResourceId_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </pinch:PinchZoom.Content>
+                </pinch:PinchZoom>
+            </Grid>
+        </StackLayout>
+        <StackLayout Padding="10" Orientation="Horizontal" IsVisible="{Binding IsPotrait, Converter={StaticResource InverseBooleanConverter}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <pinch:PinchZoom BackgroundColor="White" Grid.Column="0">
+                    <pinch:PinchZoom.Content>
+                        <Image x:Name="imgResourceVCLandscape" Aspect="AspectFit"
+                       HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="2"
+                                                      Tapped="imgResourceVC_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </pinch:PinchZoom.Content>
+                </pinch:PinchZoom>
+                <pinch:PinchZoom BackgroundColor="White" Grid.Column="2">
+                    <pinch:PinchZoom.Content>
+                        <Image x:Name="imgResourceIdLandscape" Aspect="AspectFill"
+                       HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="2"
+                                                      Tapped="imgResourceId_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </pinch:PinchZoom.Content>
+                </pinch:PinchZoom>
+            </Grid>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

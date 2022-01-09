@@ -3,14 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Gym Checkin"
              xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
-             x:Class="GymCheckin.Views.SelectVaccinePassport">
-    <ContentPage.Content>
-        <Grid>
+             x:Class="GymCheckin.Views.SelectVaccinePassport"
+             x:Name="VaccingPassport">
+
+    <StackLayout Orientation="Vertical">
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+
+        <Grid IsVisible="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"></RowDefinition>
                 <RowDefinition Height="6*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
+
             <StackLayout Grid.Row="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
                 <Label FontSize="Title" Padding="5" HorizontalTextAlignment="Center">
                     Currently only ontario vaccine passport are supported. Please upload the original pdf file that was downloaded from the ontario portal...
@@ -23,8 +29,8 @@
                 </pinch:PinchZoom.Content>
             </pinch:PinchZoom>
             <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" Padding="10" VerticalOptions="Center">
-                <Button Text="Next" x:Name="btnNext" IsVisible="false" Clicked="btnNext_Click"></Button>
+                <Button Text="Next" x:Name="btnNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click"></Button>
             </StackLayout>
         </Grid>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

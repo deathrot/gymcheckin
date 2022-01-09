@@ -10,16 +10,21 @@ namespace GymCheckin.Views
     public partial class SelectIdentificationProof : ContentPage
     {
 
+        private ViewModels.ActivityViewModel model = new ViewModels.ActivityViewModel();
+
         public SelectIdentificationProof()
         {
             InitializeComponent();
+            this.BindingContext = model;
         }
 
         async private void btnSelectIdentificationProof_Clicked(object sender, EventArgs e)
         {
             try
             {
-                //await CrossMedia.Current.Initialize();
+                model.IsBusy = true;
+
+                await CrossMedia.Current.Initialize();
 
                 new ImageCropper()
                 {
@@ -32,22 +37,22 @@ namespace GymCheckin.Views
                     Faiure = (errorType) =>
                     {
                         DisplayAlert("Alert", "No image selected. Please try again...", "Ok");
+                        model.IsBusy = false;
                     },
 
                     Success = (imageFile) =>
                     {
                         Device.BeginInvokeOnMainThread(() =>
                         {
-                            string finalResourceName = $"final_{DateTime.Now.Ticks}.png";
-                            Utility.FileUtility.SaveToFile("id.png", System.IO.File.ReadAllBytes(imageFile));
-                            Utility.FileUtility.CombileImageFiles("vc.png", "id.png", finalResourceName);
+                            string idImage = $"id_{DateTime.Now.Ticks}.png";
+                            Utility.FileUtility.SaveToFile(idImage, System.IO.File.ReadAllBytes(imageFile));
 
-                            Xamarin.Essentials.Preferences.Set(Utility.Constants.PreferenceStore_ImageResource, finalResourceName);
-                            Xamarin.Essentials.Preferences.Set(Utility.Constants.PreferenceStore_Initialize, true);
+                            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_ID_TEMP, idImage);
+                            
+                            imgIdentificationProof.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath(idImage));
 
-                            imgIdentificationProof.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath(finalResourceName));
-
-                            btnNext.IsVisible = true;
+                            model.CanProceedNext = true;
+                            model.IsBusy = false;
                         });
                     }
                 }.Show(this);
@@ -56,13 +61,33 @@ namespace GymCheckin.Views
             {
                 //await DisplayAlert("Alert!", ex.ToString(), "Ok");
                 System.Diagnostics.Debug.WriteLine($"{ex.ToString()}");
+                model.IsBusy = false;
+            }
+            finally
+            {
             }
         }
 
         async private void btnNext_Click(object sender, EventArgs e)
         {
+            
+            string vc = Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_VC, string.Empty);
+            string id = Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_ID, string.Empty);
+
+
+            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_ID,
+                                                    Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_ID_TEMP, string.Empty));
+            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_VC,
+                                                    Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, string.Empty));
+
+            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_Initialize, true);
+            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_Number_Of_Use,
+                                                Utility.PreferencesUtility.GetSavedPreferenceAsInt(Utility.Constants.PreferenceStore_Number_Of_Use, 0) + 1);
+
+            Utility.FileUtility.CleanUp(vc);
+            Utility.FileUtility.CleanUp(id);
+
             await Navigation.PushAsync(new MainPage());
         }
-
     }
 }

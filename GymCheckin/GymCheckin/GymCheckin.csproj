@@ -6,9 +6,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\check.png" />
+    <None Remove="images\check_dark.png" />
+    <None Remove="images\gears.png" />
+    <None Remove="images\gears_dark.png" />
+    <None Remove="images\next.png" />
+    <None Remove="images\next_dark.png" />
+    <None Remove="images\star.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="images\check.png" />
+    <EmbeddedResource Include="images\check_dark.png" />
+    <EmbeddedResource Include="images\gears.png" />
+    <EmbeddedResource Include="images\gears_dark.png" />
+    <EmbeddedResource Include="images\next.png" />
+    <EmbeddedResource Include="images\next_dark.png" />
+    <EmbeddedResource Include="images\star.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ImageCropper.Forms.Fix.v2" Version="1.1.5" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
     <PackageReference Include="PdfPig" Version="0.1.5" />
+    <PackageReference Include="Plugin.StoreReview" Version="3.1.0" />
     <PackageReference Include="ShapeControl.Forms" Version="0.2.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.4" />
     <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta13" />
@@ -32,8 +53,15 @@
     <EmbeddedResource Update="Views\Initialize.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\PopOutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\SelectIdentificationProof.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>

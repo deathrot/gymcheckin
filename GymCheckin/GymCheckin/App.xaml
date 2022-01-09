@@ -1,15 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:GymCheckin.Converters"
              x:Class="GymCheckin.App">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
         <ResourceDictionary>
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />            
             <Color x:Key="Primary">#000</Color>
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White, Default=Black}"></Setter>
+            </Style>
+            <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Transparent"/>
+                <Setter Property="BarTextColor" Value="{AppThemeBinding Dark=White, Default=Black, Light=Black}" />
+            </Style>
+            <Style TargetType="ActivityIndicator">
+                <Setter Property="Color"  Value="{AppThemeBinding Dark=Orange, Light=Black,Default=Black}" />
             </Style>
             <Style TargetType="Button">
                 <Setter Property="VisualStateManager.VisualStateGroups">
