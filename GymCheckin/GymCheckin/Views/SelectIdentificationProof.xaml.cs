@@ -35,7 +35,7 @@ namespace GymCheckin.Views
                     CropShape = ImageCropper.CropShapeType.Rectangle,
                     CancelButtonTitle = "Cancel",
 
-                    Faiure = (errorType) =>
+                    Faiure = (resultType) =>
                     {
                         DisplayAlert("Alert", "No image selected. Please try again...", "Ok");
                         model.IsBusy = false;

@@ -14,7 +14,7 @@ namespace GymCheckin
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
-            
+            await System.Threading.Tasks.Task.Delay(0);
         }
     }
 }

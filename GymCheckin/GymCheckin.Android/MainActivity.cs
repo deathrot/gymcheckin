@@ -14,9 +14,9 @@ namespace GymCheckin.Droid
             base.OnCreate(savedInstanceState);
 
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            Stormlion.ImageCropper.Droid.Platform.Init();
-
+            
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Stormlion.ImageCropper.Droid.Platform.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
