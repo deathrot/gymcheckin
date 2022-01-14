@@ -16,6 +16,7 @@ namespace GymCheckin.Views
         {
             InitializeComponent();
             this.BindingContext = model;
+            setUpView();
         }
 
         async private void btnSelectIdentificationProof_Clicked(object sender, EventArgs e)
@@ -89,5 +90,18 @@ namespace GymCheckin.Views
 
             await Navigation.PushAsync(new MainPage());
         }
+
+        void setUpView()
+        {
+            if (Application.Current.RequestedTheme == OSAppTheme.Dark)
+            {
+                imgNext.Source = ImageSource.FromResource("GymCheckin.images.next_dark.png", typeof(SelectIdentificationProof));
+            }
+            else
+            {
+                imgNext.Source = ImageSource.FromResource("GymCheckin.images.next.png", typeof(SelectIdentificationProof));
+            }
+        }
+
     }
 }

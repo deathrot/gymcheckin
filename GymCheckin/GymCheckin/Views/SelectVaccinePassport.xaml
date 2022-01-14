@@ -5,14 +5,14 @@
              xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
              x:Class="GymCheckin.Views.SelectVaccinePassport"
              x:Name="VaccingPassport">
-
+    
     <StackLayout Orientation="Vertical">
 
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
 
         <Grid IsVisible="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="6*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
@@ -23,13 +23,15 @@
                 </Label>
                 <Button Text="Select Vaccine Certificate" x:Name="btnSelectVaccineCertificate" HorizontalOptions="Center" Clicked="btnSelectVaccineCertificate_Clicked"></Button>
             </StackLayout>
-            <pinch:PinchZoom Grid.Row="1">
-                <pinch:PinchZoom.Content>
-                    <Image x:Name="imgBarCode"></Image>
-                </pinch:PinchZoom.Content>
-            </pinch:PinchZoom>
-            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" Padding="10" VerticalOptions="Center">
-                <Button Text="Next" x:Name="btnNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click"></Button>
+            <ScrollView Grid.Row="1">
+                <pinch:PinchZoom>
+                    <pinch:PinchZoom.Content>
+                        <Image x:Name="imgBarCode" Aspect="AspectFit"></Image>
+                    </pinch:PinchZoom.Content>
+                </pinch:PinchZoom>
+            </ScrollView>
+            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                <ImageButton x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click"></ImageButton>
             </StackLayout>
         </Grid>
     </StackLayout>

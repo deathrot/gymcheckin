@@ -12,8 +12,8 @@
 
         <Grid IsVisible="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"></RowDefinition>
-                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="6*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
 
@@ -36,16 +36,17 @@
             </StackLayout>
 
             <ScrollView Grid.Row="1">
-                <StackLayout VerticalOptions="CenterAndExpand">
-                    <Image x:Name="imgIdentificationProof" Aspect="AspectFit" WidthRequest="400" HeightRequest="400"
-                       HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand" ></Image>
-                </StackLayout>
+                <pinch:PinchZoom>
+                    <pinch:PinchZoom.Content>
+                        <Image x:Name="imgIdentificationProof" Aspect="AspectFit"></Image>
+                    </pinch:PinchZoom.Content>
+                </pinch:PinchZoom>
             </ScrollView>
-            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" Padding="10" VerticalOptions="End">
-                <Button Text="Finish" x:Name="btnNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click"></Button>
-            </StackLayout>
 
+            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="End">
+                <ImageButton x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click"></ImageButton>
+            </StackLayout>
+            
         </Grid>
     </StackLayout>
 
