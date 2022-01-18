@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UglyToad.PdfPig;
@@ -21,14 +22,10 @@ namespace GymCheckin.Views
 
         async private void btnSelectVaccineCertificate_Clicked(object sender, EventArgs e)
         {
-            #if DEBUG
-            await fetchFromResource();
-            #else
             await fetchFromPicker();
-            #endif
         }
 
-        async Task fetchFromResource()
+        /*async Task fetchFromResource()
         {
             await System.Threading.Tasks.Task.Delay(0);
 
@@ -55,7 +52,7 @@ namespace GymCheckin.Views
                 model.CanProceedNext = true;
                 model.IsBusy = false;
             }
-        }
+        }*/
 
         async Task fetchFromPicker()
         {
@@ -76,46 +73,34 @@ namespace GymCheckin.Views
 
                 if (fileResult != null && !string.IsNullOrEmpty(fileResult.FullPath))
                 {
+                    List<byte[]> allCodes = new List<byte[]>();
+                    
                     using (var stream = await fileResult.OpenReadAsync())
                     {
-                        using (PdfDocument document = PdfDocument.Open(stream))
-                        {
-                            var page = document.GetPage(1);
+                        allCodes.AddRange(Utility.QRCodeUtility.GetQRCodeFromPDF(stream));
+                    }
 
-                            var images = page.GetImages();
+                    if (allCodes.Count == 0)
+                    {
+                        success = false;
+                    }
+                    else
+                    {
+                        success = true;
 
-                            if (images != null && images.Count() >= 3)
-                            {
-                                var header = images.ElementAt(0);
-                                var qrCode = images.ElementAt(2);
+                        Models.ImageDetails imgDetails;
+                        var imageDataInBytes = Utility.ImageUtility.ResizeImage(allCodes[0], 1.5M, out imgDetails);
 
-                                byte[] qrCodeBytes;
-                                qrCode.TryGetPng(out qrCodeBytes);
+                        string vcImage = $"vc_{DateTime.Now.Ticks}.png";
 
-                                byte[] headerBytes;
-                                header.TryGetPng(out headerBytes);
+                        Utility.FileUtility.SaveToFile(vcImage, imageDataInBytes);
 
-                                if (qrCodeBytes == null)
-                                    return;
+                        this.imgBarCode.WidthRequest = imgDetails.Width;
+                        this.imgBarCode.HeightRequest = imgDetails.Height;
 
-                                success = true;
-                                model.CanProceedNext = true;
-                                model.IsBusy = false;
+                        this.imgBarCode.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath(vcImage));
 
-                                qrCodeBytes = Utility.ImageUtility.ResizeImage(qrCodeBytes, 1.5M);
-
-                                string vcImage = $"vc_{DateTime.Now.Ticks}.png";
-
-                                var combinedImageDetails = Utility.ImageUtility.CombileImageFiles(headerBytes, qrCodeBytes, vcImage);
-
-                                this.imgBarCode.WidthRequest = combinedImageDetails.Width;
-                                this.imgBarCode.HeightRequest = combinedImageDetails.Height;
-
-                                this.imgBarCode.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath(vcImage));
-
-                                Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, vcImage);
-                            }
-                        }
+                        Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, vcImage);
                     }
                 }
             }
@@ -133,6 +118,10 @@ namespace GymCheckin.Views
             {
                 await DisplayAlert("Alert", "Something is not right with the pdf selected. Please try selecting the downloaded certificate again...", "Ok");
             }
+
+
+            model.CanProceedNext = success;
+            model.IsBusy = false;
         }
 
         async void btnNext_Click(object sender, EventArgs e)
@@ -144,11 +133,11 @@ namespace GymCheckin.Views
         {
             if (Application.Current.RequestedTheme == OSAppTheme.Dark)
             {
-                imgNext.Source = ImageSource.FromResource("GymCheckin.images.next_dark.png", typeof(SelectVaccinePassport));
+                //imgNext.Source = ImageSource.FromResource("GymCheckin.images.next_dark.png", typeof(SelectVaccinePassport));
             }
             else
             {
-                imgNext.Source = ImageSource.FromResource("GymCheckin.images.next.png", typeof(SelectVaccinePassport));
+                //imgNext.Source = ImageSource.FromResource("GymCheckin.images.next.png", typeof(SelectVaccinePassport));
             }
         }
 

@@ -19,19 +19,17 @@
 
             <StackLayout Grid.Row="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
                 <Label FontSize="Title" Padding="5" HorizontalTextAlignment="Center">
-                    Currently only ontario vaccine passport are supported. Please upload the original pdf file that was downloaded from the ontario portal...
+                    Please upload the original pdf file containing the QR code of the vaccination proof:
                 </Label>
                 <Button Text="Select Vaccine Certificate" x:Name="btnSelectVaccineCertificate" HorizontalOptions="Center" Clicked="btnSelectVaccineCertificate_Clicked"></Button>
             </StackLayout>
-            <ScrollView Grid.Row="1">
-                <pinch:PinchZoom>
+                <pinch:PinchZoom Grid.Row="1">
                     <pinch:PinchZoom.Content>
-                        <Image x:Name="imgBarCode" Aspect="AspectFit"></Image>
+                        <Image x:Name="imgBarCode" Aspect="AspectFill"></Image>
                     </pinch:PinchZoom.Content>
                 </pinch:PinchZoom>
-            </ScrollView>
             <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                <ImageButton x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click"></ImageButton>
+                <Button Text="Next" x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click" Margin="5"></Button>
             </StackLayout>
         </Grid>
     </StackLayout>

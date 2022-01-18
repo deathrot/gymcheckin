@@ -92,15 +92,7 @@ namespace GymCheckin.Views
         }
 
         void setUpView()
-        {
-            if (Application.Current.RequestedTheme == OSAppTheme.Dark)
-            {
-                imgNext.Source = ImageSource.FromResource("GymCheckin.images.next_dark.png", typeof(SelectIdentificationProof));
-            }
-            else
-            {
-                imgNext.Source = ImageSource.FromResource("GymCheckin.images.next.png", typeof(SelectIdentificationProof));
-            }
+        {            
         }
 
     }

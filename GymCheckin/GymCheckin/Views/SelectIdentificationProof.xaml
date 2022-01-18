@@ -44,7 +44,7 @@
             </ScrollView>
 
             <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="End">
-                <ImageButton x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click"></ImageButton>
+                <Button Text="Next" x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click" Margin="5"></Button>
             </StackLayout>
             
         </Grid>

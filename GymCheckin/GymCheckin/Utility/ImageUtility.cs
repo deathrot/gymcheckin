@@ -18,8 +18,10 @@ namespace GymCheckin.Utility
         /// <param name="data">raw data</param>
         /// <param name="factor">factor must be positive and greater than 0</param>
         /// <returns></returns>
-        public static byte[] ResizeImage(byte[] data, decimal factor)
+        public static byte[] ResizeImage(byte[] data, decimal factor, out Models.ImageDetails imageDetails)
         {
+            imageDetails = new Models.ImageDetails();
+
             if (factor <= 0)
             {
                 throw new InvalidOperationException("Factor must be greater than 0");
@@ -29,6 +31,9 @@ namespace GymCheckin.Utility
             {
                 image1.Mutate(o =>
                     o.Resize((int)(image1.Width * factor), (int)(image1.Height * factor)));
+
+                imageDetails.Width = image1.Width;
+                imageDetails.Height = image1.Height;
 
                 using (var stream = new System.IO.MemoryStream())
                 {

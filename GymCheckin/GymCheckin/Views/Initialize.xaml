@@ -8,8 +8,7 @@
             <StackLayout>
                 <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="Start">
                     <Label FontSize="Large" TextType="Html">
-                        The app allows you to have the vaccine passport and the accepted personal identification on your device allowing you and businesses to speed up the check in process. The app can be safely be used in offline or airplane mode as your
-                        &lt;strong&gt;&lt;i&gt;data never leaves your device&lt;i&gt;&lt;/strong&gt;&lt;/div&gt;
+                        The app enables you to have both the vaccine passport and your personal identification on your device allowing you and businesses to speed up the covid check in process. Your document never leaves your device and is not shared with anyone:
                     </Label>
                 </StackLayout>
                 <StackLayout Padding="10" VerticalOptions="CenterAndExpand">
@@ -17,7 +16,7 @@
                         You need the following to get started:
                     </Label>
                     <Label>
-                        Vaccine Passport as downloaded from the health ontario portal
+                        Vaccine Passport as downloaded from your health portal containing the QR code
                     </Label>
                     <Label>
                         An acceptable form of ID:
@@ -32,7 +31,6 @@
 - Permanent resident card &lt;br /&gt;
 - Documentation from an institution or public organization that includes the name of the holder and date of birth &lt;br /&gt;
                     </Label>
-
                 </StackLayout>
                 <StackLayout VerticalOptions="End" Orientation="Horizontal">
                     <Button Text="Let's Get Started" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"

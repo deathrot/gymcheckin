@@ -97,7 +97,6 @@ namespace GymCheckin.Views
 
         async private void imgReset_Clicked(object sender, EventArgs e)
         {
-            Utility.PreferencesUtility.RemovePreference(Utility.Constants.PreferenceStore_Initialize);
             await Navigation.PushAsync(new Initialize(), true);
         }
 

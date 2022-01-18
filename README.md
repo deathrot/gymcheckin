@@ -13,12 +13,9 @@ This is a simple mobile application that allows ontario residents to consolidate
 
  - Android:
 
+![Android Potrait](/resources/android_potrait.png)
 
-
-
-
-
-
+![Android Landscape](/resources/android_landscape.png)
 
  - iOS
 
