@@ -23,7 +23,7 @@
                 </Label>
                 <Button Text="Select Vaccine Certificate" x:Name="btnSelectVaccineCertificate" HorizontalOptions="Center" Clicked="btnSelectVaccineCertificate_Clicked"></Button>
             </StackLayout>
-                <pinch:PinchZoom Grid.Row="1">
+                <pinch:PinchZoom Grid.Row="1" Padding="5">
                     <pinch:PinchZoom.Content>
                         <Image x:Name="imgBarCode" Aspect="AspectFill"></Image>
                     </pinch:PinchZoom.Content>

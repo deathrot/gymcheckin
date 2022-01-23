@@ -1,112 +1,112 @@
 {
   "images": [
     {
-      "scale": "2x",
-      "size": "20x20",
-      "idiom": "iphone",
-      "filename": "face-mask.png"
-    },
-    {
       "scale": "3x",
       "size": "20x20",
       "idiom": "iphone",
-      "filename": "face-mask1.png"
+      "filename": "icon601.png"
     },
     {
       "scale": "2x",
       "size": "29x29",
       "idiom": "iphone",
-      "filename": "face-mask2.png"
+      "filename": "icon581.png"
     },
     {
       "scale": "3x",
       "size": "29x29",
       "idiom": "iphone",
-      "filename": "face-mask3.png"
+      "filename": "icon582.png"
     },
     {
       "scale": "2x",
       "size": "40x40",
       "idiom": "iphone",
-      "filename": "face-mask4.png"
+      "filename": "icon583.png"
     },
     {
       "scale": "3x",
       "size": "40x40",
       "idiom": "iphone",
-      "filename": "face-mask5.png"
+      "filename": "icon584.png"
     },
     {
       "scale": "2x",
       "size": "60x60",
       "idiom": "iphone",
-      "filename": "face-mask6.png"
+      "filename": "icon585.png"
     },
     {
       "scale": "3x",
       "size": "60x60",
       "idiom": "iphone",
-      "filename": "face-mask7.png"
+      "filename": "icon586.png"
     },
     {
       "scale": "1x",
       "size": "20x20",
       "idiom": "ipad",
-      "filename": "face-mask8.png"
+      "filename": "icon587.png"
     },
     {
       "scale": "2x",
       "size": "20x20",
       "idiom": "ipad",
-      "filename": "face-mask9.png"
+      "filename": "icon401.png"
     },
     {
       "scale": "1x",
       "size": "29x29",
       "idiom": "ipad",
-      "filename": "face-mask10.png"
+      "filename": "icon588.png"
     },
     {
       "scale": "2x",
       "size": "29x29",
       "idiom": "ipad",
-      "filename": "face-mask11.png"
+      "filename": "icon589.png"
     },
     {
       "scale": "1x",
       "size": "40x40",
       "idiom": "ipad",
-      "filename": "face-mask12.png"
+      "filename": "icon402.png"
     },
     {
       "scale": "2x",
       "size": "40x40",
       "idiom": "ipad",
-      "filename": "face-mask13.png"
+      "filename": "icon5810.png"
     },
     {
       "scale": "1x",
       "size": "76x76",
       "idiom": "ipad",
-      "filename": "face-mask14.png"
+      "filename": "icon5811.png"
     },
     {
       "scale": "2x",
       "size": "76x76",
       "idiom": "ipad",
-      "filename": "face-mask15.png"
+      "filename": "icon5812.png"
     },
     {
       "scale": "2x",
       "size": "83.5x83.5",
       "idiom": "ipad",
-      "filename": "face-mask16.png"
+      "filename": "icon5813.png"
     },
     {
       "scale": "1x",
       "size": "1024x1024",
       "idiom": "ios-marketing",
-      "filename": "face-mask17.png"
+      "filename": "icon5814.png"
+    },
+    {
+      "scale": "2x",
+      "size": "20x20",
+      "idiom": "iphone",
+      "filename": "icon5815.png"
     }
   ],
   "properties": {},

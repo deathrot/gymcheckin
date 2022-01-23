@@ -13,23 +13,19 @@
         <Grid IsVisible="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="6*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
 
             <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
-                <Label FontSize="Title" Padding="5" HorizontalTextAlignment="Center">
-                    Select an acceptable form of ID:
+                <Label Padding="5" HorizontalTextAlignment="Start">
+                    Select an acceptable form of ID. Usually the acceptable ID has your picture, name and date of birth on it. The acceptable id is different for every country so be sure to select an ID that conforms with your local laws. Examples of acceptable form of ID are:
                 </Label>
                 <Label Padding="10,0,0,0" TextType="Html">
-                    - Birth certificate &lt;br /&gt;
-                    - Citizenship card &lt;br /&gt;
                     - Driver's licence &lt;br /&gt;
-                    - Government (Ontario or other) issued identification card, including health card &lt;br /&gt;
-                    - Indian Status Card or Indigenous membership card &lt;br /&gt;
                     - Passport &lt;br /&gt;
-                    - Permanent resident card &lt;br /&gt;
-                    - Documentation from an institution or public organization that includes the name of the holder and date of birth &lt;br /&gt;
+                    - Documentation from an institution or public organization&lt;br /&gt;
+                    - Health Card&lt;br /&gt;
                 </Label>
                 <Button Text="Select ID" x:Name="btnSelectIdentificationProof" HorizontalOptions="Center"
                         Clicked="btnSelectIdentificationProof_Clicked"></Button>

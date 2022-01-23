@@ -63,6 +63,9 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -83,58 +86,58 @@
     <BundleResource Include="Resources\xamarin_logo.png" />
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon401.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask1.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon402.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask10.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon581.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask11.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon5810.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask12.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon5811.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask13.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon5812.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask14.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon5813.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask15.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon5814.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask16.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon5815.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask17.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon582.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask2.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon583.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask3.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon584.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask4.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon585.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask5.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon586.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask6.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon587.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask7.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon588.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask8.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon589.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\face-mask9.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon601.png">
       <Visible>false</Visible>
     </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
