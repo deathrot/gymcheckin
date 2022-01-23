@@ -17,7 +17,6 @@ namespace GymCheckin.Views
         {
             InitializeComponent();
             this.BindingContext = model;
-            setUpView();
         }
 
         async private void btnSelectVaccineCertificate_Clicked(object sender, EventArgs e)
@@ -43,18 +42,12 @@ namespace GymCheckin.Views
 
                 string vcImage = $"vc_{DateTime.Now.Ticks}.png";
                 Utility.FileUtility.SaveToFile(vcImage, data);
-
-                var detail = Utility.ImageUtility.GetImageDetails(data);
-
-                this.imgBarCode.WidthRequest = detail.Width;
-                this.imgBarCode.HeightRequest = detail.Height;
-
-                this.imgBarCode.Source = ImageSource.FromResource("GymCheckin.images.vc.png", typeof(SelectVaccinePassport));
-
+                
                 Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, vcImage);
 
-                model.CanProceedNext = true;
                 model.IsBusy = false;
+                await showVaccinationProof(vcImage);
+                
             }
         }
 
@@ -99,12 +92,10 @@ namespace GymCheckin.Views
 
                         Utility.FileUtility.SaveToFile(vcImage, imageDataInBytes);
 
-                        this.imgBarCode.WidthRequest = imgDetails.Width;
-                        this.imgBarCode.HeightRequest = imgDetails.Height;
-
-                        this.imgBarCode.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath(vcImage));
-
                         Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, vcImage);
+
+                        await showVaccinationProof(vcImage);
+
                     }
                 }
             }
@@ -128,21 +119,9 @@ namespace GymCheckin.Views
             model.IsBusy = false;
         }
 
-        async void btnNext_Click(object sender, EventArgs e)
+        async private Task showVaccinationProof(string image)
         {
-            await Navigation.PushAsync(new SelectIdentificationProof());
-        }
-
-        void setUpView()
-        {
-            if (Application.Current.RequestedTheme == OSAppTheme.Dark)
-            {
-                //imgNext.Source = ImageSource.FromResource("GymCheckin.images.next_dark.png", typeof(SelectVaccinePassport));
-            }
-            else
-            {
-                //imgNext.Source = ImageSource.FromResource("GymCheckin.images.next.png", typeof(SelectVaccinePassport));
-            }
+            await Navigation.PushAsync(new ShowVaccinationProofPage());
         }
 
     }

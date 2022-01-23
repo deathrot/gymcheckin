@@ -55,21 +55,27 @@ namespace GymCheckin.Views
 
                         //VC resource
                         imgResourceVCLandscape.Source = ImageSource.FromFile(finalResourceVCWithPath);
-                        imgResourceVCLandscape.HeightRequest = heightVC;
-                        imgResourceVCLandscape.WidthRequest = widthVC;
-
                         imgResourceVC.Source = ImageSource.FromFile(finalResourceVCWithPath);
-                        imgResourceVC.HeightRequest = heightVC;
-                        imgResourceVC.WidthRequest = widthVC;
 
                         //Id resource
                         imgResourceIdLandscape.Source = ImageSource.FromFile(finalResourceIdWithPath);
-                        imgResourceIdLandscape.HeightRequest = heightId;
-                        imgResourceIdLandscape.WidthRequest = widthId;
-
                         imgResourceId.Source = ImageSource.FromFile(finalResourceIdWithPath);
-                        imgResourceId.HeightRequest = heightId;
-                        imgResourceId.WidthRequest = widthId;
+
+                        //For someone reason this works only on android
+                        if (DeviceInfo.Platform == DevicePlatform.Android)
+                        {
+                            imgResourceVCLandscape.HeightRequest = heightVC;
+                            imgResourceVCLandscape.WidthRequest = widthVC;
+
+                            imgResourceVC.HeightRequest = heightVC;
+                            imgResourceVC.WidthRequest = widthVC;
+
+                            imgResourceId.HeightRequest = heightId;
+                            imgResourceId.WidthRequest = widthId;
+
+                            imgResourceIdLandscape.HeightRequest = heightId;
+                            imgResourceIdLandscape.WidthRequest = widthId;
+                        }
                     }
 
                     await createReviewRequest();

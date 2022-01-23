@@ -99,6 +99,24 @@ namespace GymCheckin.Utility
         }
 
         /// <summary>
+        /// Gets the image info by reading the raw bytes and returns the image details
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static Models.ImageDetails GetImageDetails(string imageFile)
+        {
+            var info = Image.Identify(FileUtility.GetFullPath(imageFile));
+
+            var details = new Models.ImageDetails
+            {
+                Width = info.Width,
+                Height = info.Height
+            };
+
+            return details;
+        }
+
+        /// <summary>
         /// Combines images together and saves the output in a file 
         /// </summary>
         /// <param name="file1">raw image bytes</param>

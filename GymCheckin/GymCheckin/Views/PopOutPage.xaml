@@ -4,23 +4,25 @@
              xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
              x:Class="GymCheckin.Views.PopOutPage">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="9*" />
-        </Grid.RowDefinitions>
-        <pinch:PinchZoom BackgroundColor="White" Grid.Row="0">
-            <pinch:PinchZoom.Content>
-                <Image x:Name="imgResource" Aspect="AspectFit"
+    <StackLayout Style="{StaticResource TopLayout}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*" />
+            </Grid.RowDefinitions>
+            <pinch:PinchZoom BackgroundColor="White" Grid.Row="0">
+                <pinch:PinchZoom.Content>
+                    <Image x:Name="imgResource" Aspect="AspectFit"
                        HorizontalOptions="CenterAndExpand" 
                        VerticalOptions="CenterAndExpand">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer NumberOfTapsRequired="2"
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="2"
                                                       Tapped="imgResource_Tapped">
-                        </TapGestureRecognizer>
-                    </Image.GestureRecognizers>
-                </Image>
-            </pinch:PinchZoom.Content>
-        </pinch:PinchZoom>
-    </Grid>
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </pinch:PinchZoom.Content>
+            </pinch:PinchZoom>
+        </Grid>
+    </StackLayout>
 
 </ContentPage>

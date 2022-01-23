@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" 
+             x:Class="GymCheckin.Views.ShowIdentificationProofPage">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource TopLayout}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="8*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Text="Click finish to save your changes:" Grid.Row="0" />
+
+                <ScrollView Grid.Row="1" Padding="5">
+                    <pinch:PinchZoom>
+                        <pinch:PinchZoom.Content>
+                            <Image x:Name="imgIdentificationProof" Aspect="AspectFit"></Image>
+                        </pinch:PinchZoom.Content>
+                    </pinch:PinchZoom>
+                </ScrollView>
+
+                <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="End">
+                    <Button Text="Finish" x:Name="imgFinish" Clicked="btnFinish_Click" Margin="5"></Button>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

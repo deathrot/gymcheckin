@@ -6,7 +6,7 @@
              x:Class="GymCheckin.Views.SelectIdentificationProof">
 
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout Style="{StaticResource TopLayout}">
 
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
 
@@ -16,33 +16,25 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-
             <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
-                <Label Padding="5" HorizontalTextAlignment="Start">
+                <Label Padding="5">
                     Select an acceptable form of ID. Usually the acceptable ID has your picture, name and date of birth on it. The acceptable id is different for every country so be sure to select an ID that conforms with your local laws. Examples of acceptable form of ID are:
                 </Label>
-                <Label Padding="10,0,0,0" TextType="Html">
-                    - Driver's licence &lt;br /&gt;
-                    - Passport &lt;br /&gt;
-                    - Documentation from an institution or public organization&lt;br /&gt;
-                    - Health Card&lt;br /&gt;
+                <Label Padding="10,0,0,0">
+                    - Driver's licence
+                </Label>
+                <Label Padding="10,0,0,0">
+                    - Passport
+                </Label>
+                <Label Padding="10,0,0,0">
+                    - Documentation from an institution or public organization
+                </Label>
+                <Label Padding="10,0,0,0">
+                    - Health Card
                 </Label>
                 <Button Text="Select ID" x:Name="btnSelectIdentificationProof" HorizontalOptions="Center"
                         Clicked="btnSelectIdentificationProof_Clicked"></Button>
-            </StackLayout>
-
-            <ScrollView Grid.Row="1">
-                <pinch:PinchZoom>
-                    <pinch:PinchZoom.Content>
-                        <Image x:Name="imgIdentificationProof" Aspect="AspectFit"></Image>
-                    </pinch:PinchZoom.Content>
-                </pinch:PinchZoom>
-            </ScrollView>
-
-            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End"  VerticalOptions="End">
-                <Button Text="Next" x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click" Margin="5"></Button>
-            </StackLayout>
-            
+            </StackLayout>            
         </Grid>
     </StackLayout>
 

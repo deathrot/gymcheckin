@@ -10,8 +10,13 @@
         <ResourceDictionary>
             <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />            
             <Color x:Key="Primary">#000</Color>
+            <Style TargetType="StackLayout" x:Key="TopLayout">
+                <Setter Property="Padding" Value="5"></Setter>
+            </Style>
             <Style TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
                 <Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White, Default=Black}"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Start"></Setter>
             </Style>
             <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="Transparent"/>
@@ -29,7 +34,7 @@
                                     <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=White, Default=Black, Light=Black}" />
                                     <Setter Property="TextColor" Value="{AppThemeBinding Dark=Black, Default=White, Light=White}" />
                                     <Setter Property="Padding" Value="10" />
-                                    <Setter Property="Margin" Value="5" />
+                                    <Setter Property="Margin" Value="10" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>

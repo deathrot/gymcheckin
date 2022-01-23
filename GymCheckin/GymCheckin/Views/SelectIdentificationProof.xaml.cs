@@ -1,6 +1,7 @@
 ﻿using Plugin.Media;
 using Stormlion.ImageCropper;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +17,6 @@ namespace GymCheckin.Views
         {
             InitializeComponent();
             this.BindingContext = model;
-            setUpView();
         }
 
         async private void btnSelectIdentificationProof_Clicked(object sender, EventArgs e)
@@ -49,11 +49,11 @@ namespace GymCheckin.Views
                             Utility.FileUtility.SaveToFile(idImage, System.IO.File.ReadAllBytes(imageFile));
 
                             Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_ID_TEMP, idImage);
-                            
-                            imgIdentificationProof.Source = ImageSource.FromFile(Utility.FileUtility.GetFullPath(idImage));
-
+                                                                                   
                             model.CanProceedNext = true;
                             model.IsBusy = false;
+
+                            navigateToIdentificationProofPage(idImage);
                         });
                     }
                 }.Show(this);
@@ -69,28 +69,9 @@ namespace GymCheckin.Views
             }
         }
 
-        async private void btnNext_Click(object sender, EventArgs e)
+        async void navigateToIdentificationProofPage(string imageName)
         {
-            
-            string vc = Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_VC, string.Empty);
-            string id = Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_ID, string.Empty);
-
-
-            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_ID,
-                                                    Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_ID_TEMP, string.Empty));
-            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_VC,
-                                                    Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, string.Empty));
-
-            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_Initialize, true);
-            
-            Utility.FileUtility.CleanUp(vc);
-            Utility.FileUtility.CleanUp(id);
-
-            await Navigation.PopToRootAsync();
-        }
-
-        void setUpView()
-        {            
+            await Navigation.PushAsync(new ShowIdentificationProofPage());
         }
 
     }

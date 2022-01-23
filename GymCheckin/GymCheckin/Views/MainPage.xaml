@@ -16,15 +16,17 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <StackLayout Padding="10">
-        <StackLayout Padding="10" IsVisible="{Binding IsPotrait}">
+    <StackLayout Style="{StaticResource TopLayout}">
+        <StackLayout IsVisible="{Binding IsPotrait}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="4*" />
                     <RowDefinition Height="10" />
                     <RowDefinition Height="4*" />
                 </Grid.RowDefinitions>
-                <pinch:PinchZoom BackgroundColor="White" Grid.Row="0">
+                <Label FontSize="Subtitle" Text="Double tap on any image below to see the full view:" Grid.Row="0" />
+                <pinch:PinchZoom BackgroundColor="White" Grid.Row="1">
                     <pinch:PinchZoom.Content>
                         <Image x:Name="imgResourceVC" Aspect="AspectFit"
                        HorizontalOptions="CenterAndExpand" 
@@ -37,7 +39,7 @@
                         </Image>
                     </pinch:PinchZoom.Content>
                 </pinch:PinchZoom>
-                <pinch:PinchZoom BackgroundColor="White" Grid.Row="2">
+                <pinch:PinchZoom BackgroundColor="White" Grid.Row="3">
                     <pinch:PinchZoom.Content>
                         <Image x:Name="imgResourceId" Aspect="AspectFill"
                        HorizontalOptions="CenterAndExpand" 
@@ -52,14 +54,19 @@
                 </pinch:PinchZoom>
             </Grid>
         </StackLayout>
-        <StackLayout Padding="10" Orientation="Horizontal" IsVisible="{Binding IsPotrait, Converter={StaticResource InverseBooleanConverter}}">
+        <StackLayout Orientation="Horizontal" IsVisible="{Binding IsPotrait, Converter={StaticResource InverseBooleanConverter}}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*" />
-                    <ColumnDefinition Width="10" />
                     <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="5*" />
                 </Grid.ColumnDefinitions>
-                <pinch:PinchZoom BackgroundColor="White" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label FontSize="Subtitle" Text="Double tap on either below to see the full view:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                <pinch:PinchZoom BackgroundColor="White" Grid.Column="0" Grid.Row="1">
                     <pinch:PinchZoom.Content>
                         <Image x:Name="imgResourceVCLandscape" Aspect="AspectFit"
                        HorizontalOptions="CenterAndExpand" 
@@ -72,7 +79,7 @@
                         </Image>
                     </pinch:PinchZoom.Content>
                 </pinch:PinchZoom>
-                <pinch:PinchZoom BackgroundColor="White" Grid.Column="2">
+                <pinch:PinchZoom BackgroundColor="White" Grid.Column="2" Grid.Row="1">
                     <pinch:PinchZoom.Content>
                         <Image x:Name="imgResourceIdLandscape" Aspect="AspectFill"
                        HorizontalOptions="CenterAndExpand" 

@@ -4,7 +4,7 @@
              Title="Gym Checkin"
              x:Class="GymCheckin.Views.Initialize">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Style="{StaticResource TopLayout}">
             <StackLayout>
                 <StackLayout Padding="10" Orientation="Vertical" VerticalOptions="Start">
                     <Label>
