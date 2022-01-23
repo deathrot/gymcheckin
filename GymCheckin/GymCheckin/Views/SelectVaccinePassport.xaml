@@ -29,7 +29,7 @@
                     </pinch:PinchZoom.Content>
                 </pinch:PinchZoom>
             <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                <Button Text="Next" x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click" Margin="5"></Button>
+                <Button Text="Next" x:Name="imgNext" IsVisible="{Binding CanProceedNext}" Clicked="btnNext_Click" Margin="10" Padding="10"></Button>
             </StackLayout>
         </Grid>
     </StackLayout>

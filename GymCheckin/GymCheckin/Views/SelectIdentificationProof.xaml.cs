@@ -86,7 +86,7 @@ namespace GymCheckin.Views
             Utility.FileUtility.CleanUp(vc);
             Utility.FileUtility.CleanUp(id);
 
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PopToRootAsync();
         }
 
         void setUpView()

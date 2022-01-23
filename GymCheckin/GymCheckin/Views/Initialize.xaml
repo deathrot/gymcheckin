@@ -6,31 +6,21 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="Start">
-                    <Label FontSize="Large" TextType="Html">
-                        The app enables you to have both the vaccine passport and your personal identification on your device allowing you and businesses to speed up the covid check in process. Your document never leaves your device and is not shared with anyone:
+                <StackLayout Padding="10" Orientation="Vertical" VerticalOptions="Start">
+                    <Label>
+                        The app enables you to have both your vaccine passport and your personal identification on your device allowing you to get past the covid check in line quickly.
                     </Label>
-                </StackLayout>
-                <StackLayout Padding="10" VerticalOptions="CenterAndExpand">
-                    <Label Padding="0,10,0,0">
+                    <Label TextDecorations="Underline">
                         You need the following to get started:
                     </Label>
-                    <Label>
-                        Vaccine Passport as downloaded from your health portal containing the QR code
+                    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Padding="10,10,0,0">
+                    <Label Padding="10,10,0,0">
+                        1. Vaccine Passport as downloaded from your health portal containing the QR code
                     </Label>
                     <Label>
-                        An acceptable form of ID:
+                        2. An acceptable form of ID
                     </Label>
-                    <Label Padding="10,0,0,0" TextType="Html">
-                        - Birth certificate &lt;br /&gt;
-- Citizenship card &lt;br /&gt;
-- Driver's licence &lt;br /&gt;
-- Government (Ontario or other) issued identification card, including health card &lt;br /&gt;
-- Indian Status Card or Indigenous membership card &lt;br /&gt;
-- Passport &lt;br /&gt;
-- Permanent resident card &lt;br /&gt;
-- Documentation from an institution or public organization that includes the name of the holder and date of birth &lt;br /&gt;
-                    </Label>
+                        </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="End" Orientation="Horizontal">
                     <Button Text="Let's Get Started" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"

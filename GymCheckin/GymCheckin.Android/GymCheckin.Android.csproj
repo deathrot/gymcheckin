@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -131,7 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GymCheckin\GymCheckin.csproj">
-      <Project>{1E3F188A-A944-4B36-BCB6-72E7FD4579FB}</Project>
+      <Project>{DE7DD06C-0873-449D-8C50-2167968D8ADF}</Project>
       <Name>GymCheckin</Name>
     </ProjectReference>
   </ItemGroup>
