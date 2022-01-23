@@ -151,10 +151,12 @@ namespace GymCheckin.Views
         {
             var numberOfUse = Utility.PreferencesUtility.GetSavedPreferenceAsInt(Utility.Constants.PreferenceStore_Number_Of_Use);
 
-            if (Utility.ReviewUtility.ShouldRunReview(numberOfUse) )
+            if (Utility.ReviewUtility.ShouldRunReview(numberOfUse+1) )
             {
                 await CrossStoreReview.Current.RequestReview(false);
             }
+
+            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_Number_Of_Use, numberOfUse+1);
         }
 
     }

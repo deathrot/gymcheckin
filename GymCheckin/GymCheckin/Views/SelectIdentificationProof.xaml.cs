@@ -82,9 +82,7 @@ namespace GymCheckin.Views
                                                     Utility.PreferencesUtility.GetSavedPreferenceAsString(Utility.Constants.PreferenceStore_ImageResource_VC_TEMP, string.Empty));
 
             Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_Initialize, true);
-            Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_Number_Of_Use,
-                                                Utility.PreferencesUtility.GetSavedPreferenceAsInt(Utility.Constants.PreferenceStore_Number_Of_Use, 0) + 1);
-
+            
             Utility.FileUtility.CleanUp(vc);
             Utility.FileUtility.CleanUp(id);
 
