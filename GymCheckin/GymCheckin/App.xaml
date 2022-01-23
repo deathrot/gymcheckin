@@ -28,6 +28,8 @@
                                 <VisualState.Setters>
                                     <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=White, Default=Black, Light=Black}" />
                                     <Setter Property="TextColor" Value="{AppThemeBinding Dark=Black, Default=White, Light=White}" />
+                                    <Setter Property="Padding" Value="10" />
+                                    <Setter Property="Margin" Value="5" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>

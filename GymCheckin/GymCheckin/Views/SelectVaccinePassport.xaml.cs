@@ -22,10 +22,14 @@ namespace GymCheckin.Views
 
         async private void btnSelectVaccineCertificate_Clicked(object sender, EventArgs e)
         {
+#if DEBUG
+            await fetchFromResource();
+#else
             await fetchFromPicker();
+#endif
         }
 
-        /*async Task fetchFromResource()
+        async Task fetchFromResource()
         {
             await System.Threading.Tasks.Task.Delay(0);
 
@@ -52,7 +56,7 @@ namespace GymCheckin.Views
                 model.CanProceedNext = true;
                 model.IsBusy = false;
             }
-        }*/
+        }
 
         async Task fetchFromPicker()
         {
