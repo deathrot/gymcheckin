@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>GymCheckin</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.paperdrop.GymCheckin</string>
+	<string>com.paperdrop.gymcheckin</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleName</key>
@@ -40,5 +40,7 @@
 	<string>This app needs access to the photo gallery for picking photos and videos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to photos gallery for picking photos and videos.</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
 </dict>
 </plist>
