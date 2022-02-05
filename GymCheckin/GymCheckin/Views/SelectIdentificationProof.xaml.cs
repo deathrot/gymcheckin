@@ -21,6 +21,38 @@ namespace GymCheckin.Views
 
         async private void btnSelectIdentificationProof_Clicked(object sender, EventArgs e)
         {
+            #if DEBUG
+            await selectIdentificationProofFromEmbeddedResource();
+            #else
+            await selectIdentificationProofFromPhone();
+            #endif
+        }
+
+        async Task selectIdentificationProofFromEmbeddedResource()
+        {
+            await Task.Delay(0);
+
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            using (var stream = assembly.GetManifestResourceStream("GymCheckin.images.id.jpg"))
+            {
+                byte[] data = new byte[stream.Length];
+                stream.Read(data, 0, data.Length);
+
+                string idImage = $"id_{DateTime.Now.Ticks}.png";
+                
+                Utility.FileUtility.SaveToFile(idImage, data);
+
+                Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_ID_TEMP, idImage);
+
+                model.CanProceedNext = true;
+                model.IsBusy = false;
+
+                navigateToIdentificationProofPage(idImage);
+            }
+        }
+
+        async private Task selectIdentificationProofFromPhone()
+        {
             try
             {
                 model.IsBusy = true;
@@ -49,7 +81,7 @@ namespace GymCheckin.Views
                             Utility.FileUtility.SaveToFile(idImage, System.IO.File.ReadAllBytes(imageFile));
 
                             Utility.PreferencesUtility.SavePreference(Utility.Constants.PreferenceStore_ImageResource_ID_TEMP, idImage);
-                                                                                   
+
                             model.CanProceedNext = true;
                             model.IsBusy = false;
 
