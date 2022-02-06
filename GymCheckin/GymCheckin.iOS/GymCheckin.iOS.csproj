@@ -145,6 +145,11 @@
       <Visible>false</Visible>
     </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon512-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024-2.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -178,5 +183,9 @@
       <Project>{DE7DD06C-0873-449D-8C50-2167968D8ADF}</Project>
       <Name>GymCheckin</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+    <ITunesArtwork Include="iTunesArtwork" />
   </ItemGroup>
 </Project>
