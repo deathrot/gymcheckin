@@ -32,7 +32,7 @@
                 <Label Padding="10,0,0,0">
                     - Health Card
                 </Label>
-                <Button Text="Select ID" x:Name="btnSelectIdentificationProof" HorizontalOptions="Center"
+                <Button Text="Select" x:Name="btnSelectIdentificationProof" HorizontalOptions="Center"
                         Clicked="btnSelectIdentificationProof_Clicked"></Button>
             </StackLayout>            
         </Grid>

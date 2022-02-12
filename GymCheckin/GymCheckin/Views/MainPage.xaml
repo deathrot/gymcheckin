@@ -25,7 +25,7 @@
                     <RowDefinition Height="10" />
                     <RowDefinition Height="4*" />
                 </Grid.RowDefinitions>
-                <Label FontSize="Subtitle" Text="Double tap on any image below to see the full view:" Grid.Row="0" />
+                <Label FontSize="Subtitle" Text="Double tap on any image below to see the expanded view:" Grid.Row="0" />
                 <pinch:PinchZoom BackgroundColor="White" Grid.Row="1">
                     <pinch:PinchZoom.Content>
                         <Image x:Name="imgResourceVC" Aspect="AspectFit"

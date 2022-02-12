@@ -145,11 +145,21 @@
       <Visible>false</Visible>
     </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon120-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon512.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon512-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon120-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon512.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon512-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

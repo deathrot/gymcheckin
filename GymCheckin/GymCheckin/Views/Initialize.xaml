@@ -8,14 +8,14 @@
             <StackLayout>
                 <StackLayout Padding="10" Orientation="Vertical" VerticalOptions="Start">
                     <Label>
-                        The app enables you to have both your vaccine passport and your personal identification on your device allowing you to get past the covid check in line quickly.
+                        The app enables you to have your checkin qr code and your personal identification on your device speeding up checkin process at your local gym/restaurants/malls etc.
                     </Label>
                     <Label TextDecorations="Underline" Padding="0,20,0,0">
                         You need the following to get started:
                     </Label>
                     <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Padding="10,10,0,0">
                     <Label>
-                        1. Vaccine Passport as downloaded from your health portal containing the QR code
+                        1. Check in QR code in a pdf
                     </Label>
                     <Label>
                         2. An acceptable form of ID
