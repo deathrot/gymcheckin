@@ -23,6 +23,8 @@ This is a simple mobile application that allows ontario residents to consolidate
 
 ![iOS Landscape](/resources/ios_landscape.png)
 
+Available on App Store(https://apps.apple.com/us/app/gc-gym-checkin/id1607833232)
+
 
  ## Contribution
 In order to support different provinces and countries I am looking at samples of various countries that I can test with. If you want your countries to be supported please share those images via google drive or dropbox and send me a link on my email: paperdropio@gmail.com
